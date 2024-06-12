@@ -8,6 +8,9 @@
       <div id="darkMode" @click="toggleDarkMode" class="toggleMode"><span class="slider"></span></div>
     </nav>
     <router-view/>
+    <footer>
+      Contactez moi
+    </footer>
   </div>
 </template>
 <script>
@@ -99,11 +102,12 @@ html {
 }
 
 nav {
+  width: 100%;
   padding: 30px;
   background-color: var(--yellowIC1);
   display: flex;
   justify-content: space-evenly;
-
+  box-shadow: var(--yellowIC3) 0px 0px 10px;
 }
 
 a {
@@ -117,6 +121,18 @@ nav a {
 
 nav a.router-link-exact-active {
   color: var(--yellowtext2);
+}
+
+nav a:hover {
+  color: var(--yellowtext2);
+}
+
+footer {
+  width: 100%;
+  background-color: var(--yellowIC1);
+  color: var(--yellowtext1);
+  padding: 20px;
+  text-align: center;
 }
 
 .toggleMode {
@@ -139,5 +155,34 @@ nav a.router-link-exact-active {
   border-radius: 90px;
   height: 20px;
   width: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  padding: 50px 20px 20px 20px;
+  margin-bottom: 10px;
+  color: var(--yellowtext2);
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+ul {
+  margin: 10px 0 20px 20px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+li {
+  font-size: 1.1em;
+  margin: 5px 0;
 }
 </style>

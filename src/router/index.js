@@ -13,7 +13,19 @@ const routes = [
   {
     path: '/projects',
     name: 'projects',
-    component: () => import('../views/ProjectsView.vue')
+    component: () => import('../views/ProjectsView.vue'),
+    children: [
+          {
+            path: '',
+            name: 'projectsList',
+            component: () => import('../views/projects/ProjectsList.vue')
+          },
+          {
+            path: 'stageWebScraping',
+            name: 'stageWebScraping',
+            component: () => import('../views/projects/StageWebScraping.vue')
+          },
+    ],
   },
   {
     path: '/about',
