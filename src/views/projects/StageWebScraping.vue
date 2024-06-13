@@ -22,12 +22,11 @@
       <div class="title-container">
         <h3 class="title">Développement d'une application</h3>
         <div class="scrolling-text-top">Respecter les besoins décrits par le client &nbsp; Appliquer les principes algorithmiques &nbsp; Veiller à la qualité du code et à sa documentation &nbsp; Choisir les ressources techniques appropriées</div>
-        <div class="scrolling-text-bottom">Respecter les besoins décrits par le client &nbsp; Appliquer les principes algorithmiques &nbsp; Veiller à la qualité du code et à sa documentation &nbsp; Choisir les ressources techniques appropriées</div>
       </div>
       <div class="container dark row">
         <div class="description">
           <p>La majorité du cahier des charges imposé se retrouve dans cet écran d'accueil.</p>
-          <p>L'objectif principal était d'offrir une <span class="important">possibilité de recherche et d'analyse hautement paramétrable</span>. En effet, l'application devait :</p>
+          <p>L'objectif principal était d'offrir une <span class="important">possibilité de recherche et d'analyse hautement paramétrable</span>. En effet, l'application devait&nbsp;:</p>
           <ul>
             <li>Disposer de plusieurs sources de recherche afin de multiplier les nombre de résultats possible, le défi ici est d'élaborer un script de récupération des images propre à chaque site.</li>
             <li>Pouvoir <span class="important">chercher n'importe quoi</span></li>
@@ -56,11 +55,10 @@
       <div class="title-container">
         <h3 class="title">Conduire un projet</h3>
         <div class="scrolling-text-top">communiquer efficacement avec les différents acteurs d'un projet &nbsp; adopter une démarche proactive, créative et critique &nbsp;</div>
-        <div class="scrolling-text-bottom">communiquer efficacement avec les différents acteurs d'un projet &nbsp; adopter une démarche proactive, créative et critique &nbsp;</div>
       </div>
       <div class="container dark row">
         <div class="description">
-          <p>Pour assurer le suivi du projet, je tenais <span class="important">un journal quotidien</span> des tâches réalisées et de celles restant à accomplir Cette liste comprenait un code couleur pour indiquer mon avancement. Il est ainsi simple de s'appercevoir que j'ai eu un problème avec l'implémentation du modèle anomaly clip.</p>
+          <p>Pour assurer le suivi du projet, je tenais <span class="important">un journal quotidien</span> des tâches réalisées et de celles restant à accomplir Cette liste comprenait un <span class="important">code couleur</span> pour indiquer mon avancement. Il est ainsi simple de s'appercevoir que j'ai eu un problème avec l'implémentation du modèle anomaly clip.</p>
           <p><span class="important">Je restais agile</span> car pendant l'avancement de l'application les perspectives de ce qui était possible pouvait évoluer. Pour cela je faisais <span class="important">une démonstration deux fois par semaine</span> minimum dont une souvent le vendredi pour regarder l'avancement de la semaine.</p>
           <p>Le suivi était également effectué grâce à <span class="important">des commits réguliers</span> et une séparation entre les branches de développement (dev) et principale (main) pour <span class="important">garantir une version toujours stable du logiciel.</span></p>
         </div>
@@ -115,20 +113,20 @@ export default {
           ]
         },
         {src: 'stageWebScraping/startingPage1.png', bubbles : [
-            {top: '10%', left: '24%', description: 'Choix des sources de recherche'},
-            {top: '23%', left: '24%', description: 'Ajout de mots de recherche' },
-            {top: '23%', left: '36%', description: 'Activation de classes identiques aux mots de recherche' },
-            {top: '38%', left: '24%', description: 'Liste des mots de recherche'},
-            {top: '59%', left: '15%', description: 'Période de recherche'},
-            {top: '59%', left: '30%', description: 'Quantité de résultats de recherche pour chaque mot et chaque année'},
-            {top: '69%', left: '23%', description: 'Activation de l\'ajout d\'images locales pour les classer'},
-            {top: '13%', left: '75%', description: 'Optimisation des performances : Le nombre de processus améliore la vitesse de l\'IA tandis que le nombre de threads améliore la vitesse du scraper.'},
-            {top: '24%', left: '75%', description: 'Ajout des classes, ce champ est désactivé lorsque le bouton "Sames classes" est actif.'},
-            {top: '30%', left: '75%', description: 'Liste des classes'},
-            {top: '40%', left: '75%', description: 'Choix de l\'IA et de ses paramètres (sa précision)'},
-            {top: '77%', left: '30%', description: 'Bouton pour lancer les recherches. Celui-ci affiche "loading" après le lancement du programme.'},
-            {top: '77%', left: '47%', description: 'Permet de choisir si l\'utilisateur veut contrôler les résultats.'},
-            {top: '77%', left: '66%', description: 'Permet de choisir si l\'utilisateur veut que l\'IA classe les résultats.'},
+            {top: '11%', left: '24%', description: 'Choix des sources de recherche'},
+            {top: '24%', left: '24%', description: 'Ajout de mots de recherche' },
+            {top: '24%', left: '36%', description: 'Activation de classes identiques aux mots de recherche' },
+            {top: '39%', left: '24%', description: 'Liste des mots de recherche'},
+            {top: '62%', left: '15%', description: 'Période de recherche'},
+            {top: '62%', left: '34%', description: 'Quantité de résultats de recherche pour chaque mot et chaque année'},
+            {top: '73%', left: '23%', description: 'Activation de l\'ajout d\'images locales pour les classer'},
+            {top: '14%', left: '75%', description: 'Optimisation des performances : Le nombre de processus améliore la vitesse de l\'IA tandis que le nombre de threads améliore la vitesse du scraper.'},
+            {top: '25%', left: '75%', description: 'Ajout des classes, ce champ est désactivé lorsque le bouton "Sames classes" est actif.'},
+            {top: '31%', left: '75%', description: 'Liste des classes'},
+            {top: '43%', left: '76%', description: 'Choix de l\'IA et de ses paramètres (sa précision)'},
+            {top: '81%', left: '30%', description: 'Bouton pour lancer les recherches. Celui-ci affiche "loading" après le lancement du programme.'},
+            {top: '81%', left: '47%', description: 'Permet de choisir si l\'utilisateur veut contrôler les résultats.'},
+            {top: '81%', left: '66%', description: 'Permet de choisir si l\'utilisateur veut que l\'IA classe les résultats.'},
           ]
         },
         {src: 'stageWebScraping/waitingPage1.png', bubbles : [
@@ -227,11 +225,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-top: 60px;
 }
 
 .title {
+  align-items: center;
   position: relative;
   z-index: 2;
   color: var(--noir1);
@@ -239,12 +238,11 @@ export default {
 
 .scrolling-text-top {
   position: absolute;
-  top: 65%;
+  top: 75%;
   white-space: nowrap;
   font-weight: bold;
   font-size: 1em;
   color: var(--noir2);
-  animation: scroll-left 20s linear infinite;
 }
 
 .scrolling-text-bottom {
@@ -257,9 +255,8 @@ export default {
   animation: scroll-right 20s linear infinite;
 }
 .dark {
-  background-color: var(--noir1);
-  border-radius: 90px;
-  color : var(--blanc1);
+  border-radius: 10px;
+  background-color: var(--blanc2);
   box-shadow: 3px 3px 5px var(--noir1) ;
 }
 @keyframes scroll-right {
@@ -292,11 +289,13 @@ export default {
 .shadow-top {
   padding: 40px;
   box-shadow: 0px 10px 10px var(--noir1) ;
+  border-radius: 0 0 10px 10px;
 }
 .shadow-bottom{
   margin-top: 80px;
   padding: 40px;
   box-shadow: 0px -10px 10px var(--noir1) ;
+  border-radius: 10px 10px 0 0;
 }
 @media (max-width: 600px) {
 

@@ -66,11 +66,15 @@ export default {
   align-items: center;
   max-width: 1000px;
   margin: auto;
+  background-color: var(--noir1);
+  color : var(--blanc1);
 }
 
 .image-container {
   position: relative;
   width: 100%;
+  background-color: var(--noir1);
+  border-radius: 50px;
 }
 
 .main-image {
@@ -84,19 +88,15 @@ export default {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 255, 0.5);
+  background-color: rgba(12, 40, 94, 0.5);
   cursor: pointer;
 }
 
 .description {
   margin-top: 20px;
-  background-color: var(--noir1);
-  color: var(--blanc1);
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  max-width: 300px;
+  width: 95%;
   word-wrap: break-word;
 }
 
