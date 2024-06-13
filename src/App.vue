@@ -36,6 +36,7 @@ export default {
   --noir1 : #1D1D1D;
   --noir2 : #292929;
   --bleu1 : #2272FF;
+  --bleu2 : #64a3ff;
   --blanc2 : #ececec;
   --blanc1 : #f6f5f5;
 
@@ -60,6 +61,8 @@ export default {
 html {
   background-color: var(--blanc1);
   color: var(--noir1);
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 #app {
@@ -134,6 +137,12 @@ h2 {
 h3 {
   font-size: 3em;
   text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 10px;
 }
 
 p {

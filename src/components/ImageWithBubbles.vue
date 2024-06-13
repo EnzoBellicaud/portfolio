@@ -74,13 +74,13 @@ export default {
   position: relative;
   width: 100%;
   background-color: var(--noir1);
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .main-image {
   width: 100%;
   display: block;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .bubble {

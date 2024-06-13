@@ -19,10 +19,12 @@
     </div>
 
     <div>
+
       <div class="title-container">
         <h3 class="title">Développement d'une application</h3>
         <div class="scrolling-text-top">Respecter les besoins décrits par le client &nbsp; Appliquer les principes algorithmiques &nbsp; Veiller à la qualité du code et à sa documentation &nbsp; Choisir les ressources techniques appropriées</div>
       </div>
+
       <div class="container dark row">
         <div class="description">
           <p>La majorité du cahier des charges imposé se retrouve dans cet écran d'accueil.</p>
@@ -40,6 +42,7 @@
             :bubbles="images[2].bubbles"
         />
       </div>
+
       <div class="container dark row-reverse">
         <div class="description">
           <p>Si l'utilisateur souhaite contrôler les résultats, il arrive alors sur cette <span class="important">nouvelle vue.</span></p>
@@ -52,10 +55,38 @@
             :bubbles="images[0].bubbles"
         />
       </div>
+
+      <div class="container" style="align-items: stretch; justify-content: space-evenly">
+        <div class="information">
+          <h4>Interface</h4>
+          <div class="information-texte">
+            <p>Le choix de <span class="important">Tkinter</span> pour l'interface graphique s'est imposé pour sa simplicité et sa compatibilité avec Python. Cependant, il a fallu <span class="important">adapter le design</span> pour qu'il soit plus moderne et plus intuitif.</p>
+            <p>Le design a été pensé pour être <span class="important">ergonomique et intuitif</span>. Pour faciliter cela j'ai utilisé <span class="important">librairie bootstrap</span> compatible avec tkinter</p>
+            <p>Par ailleur le choix même de Python était <span class="important">imposé par le cahier des charges</span>, cela simplifiait le traitement par IA par la suite</p>
+          </div>
+        </div>
+        <div class="information">
+          <h4>Scraping</h4>
+          <div class="information-texte">
+            <p>Le scraping est une étape cruciale pour l'application. Il a fallu <span class="important">adapter le scraper</span> pour chaque site de recherche. Pour cela j'ai utilisé <span class="important">Selenium</span> pour simuler un navigateur et intéragir avec les <span class="important">pages web dynamiques</span>. Cela s'est avéré nécessaire pour "cliquer" sur les images pour les avoir en meilleur qualité</p>
+            <p>Le scraper est <span class="important">multi-threadé</span> pour accélérer la collecte des images. Cela signifie que l'on peut lancer autant de navigateur faisant des recherche que l'ordinateur le permet</p>
+          </div>
+        </div>
+        <div class="information">
+          <h4>IA</h4>
+          <div class="information-texte">
+            <p>La partie IA est dédiée à la <span class="important">classification des images</span>. Pour cela j'ai utilisé <span class="important">YoloWorld et Grounding DINO</span> qui sont des modèles de classification d'objets. Ces modèles sont <span class="important">zero-shot</span> ce qui signifie qu'ils peuvent détecter n'importe quel type d'objet sans avoir besoin d'entrainement préalable</p>
+            <p>Pour accomplir cette détection universelle, ces modèles <span class="important">décodent les classes</span> données par l'utilisateur en information qu'ils pourront <span class="important">comparer avec les images</span> afin d'y détecter les objets</p>
+            <p>De plus, la tache de classification est <span class="important">multi-procéssé</span> afin de la rendre plus rapide</p>
+          </div>
+        </div>
+      </div>
+
       <div class="title-container">
         <h3 class="title">Conduire un projet</h3>
         <div class="scrolling-text-top">communiquer efficacement avec les différents acteurs d'un projet &nbsp; adopter une démarche proactive, créative et critique &nbsp;</div>
       </div>
+
       <div class="container dark row">
         <div class="description">
           <p>Pour assurer le suivi du projet, je tenais <span class="important">un journal quotidien</span> des tâches réalisées et de celles restant à accomplir Cette liste comprenait un <span class="important">code couleur</span> pour indiquer mon avancement. Il est ainsi simple de s'appercevoir que j'ai eu un problème avec l'implémentation du modèle anomaly clip.</p>
@@ -188,13 +219,32 @@ export default {
   max-width: 800px;
   margin: 20px;
   display: block;
-  border-radius: 50px;
+  border-radius: 10px;
   box-shadow: 3px 3px 5px var(--noir1) ;
 }
 
 .description{
   max-width: 800px;
   margin: 10px;
+}
+
+.information-texte{
+  background-color: var(--blanc1);
+  color : var(--noir1);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.information{
+  width: 28%;
+  max-width: 750px;
+  min-width: 400px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: var(--noir1);
+  color : var(--blanc1);
+  box-shadow: 1px 1px 6px var(--noir1) ;
+  height: fit-content;
 }
 
 .intro {
@@ -205,7 +255,7 @@ export default {
 .important {
   font-weight: bold;
   transform: translate(-50%,-50%);
-  background-image: linear-gradient(var(--bleu1), var(--bleu1));
+  background-image: linear-gradient(var(--bleu2), var(--bleu2));
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: 0% 100%;
@@ -256,8 +306,11 @@ export default {
 }
 .dark {
   border-radius: 10px;
-  background-color: var(--blanc2);
-  box-shadow: 3px 3px 5px var(--noir1) ;
+}
+
+.dark:hover {
+  box-shadow: 0px 0px 10px var(--noir1) ;
+  transition: all 0.2s ease-in-out;
 }
 @keyframes scroll-right {
   0% {
