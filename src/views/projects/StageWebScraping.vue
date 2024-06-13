@@ -220,7 +220,7 @@ export default {
   margin: 20px;
   display: block;
   border-radius: 10px;
-  box-shadow: 3px 3px 5px var(--noir1) ;
+  box-shadow: 3px 3px 5px var(--noir3) ;
 }
 
 .description{
@@ -243,7 +243,7 @@ export default {
   border-radius: 10px;
   background-color: var(--noir1);
   color : var(--blanc1);
-  box-shadow: 1px 1px 6px var(--noir1) ;
+  box-shadow: 1px 1px 6px var(--noir3) ;
   height: fit-content;
 }
 
@@ -309,7 +309,7 @@ export default {
 }
 
 .dark:hover {
-  box-shadow: 0px 0px 10px var(--noir1) ;
+  box-shadow: 0px 2px 3px var(--noir3) ;
   transition: all 0.2s ease-in-out;
 }
 @keyframes scroll-right {
@@ -341,13 +341,13 @@ export default {
 }
 .shadow-top {
   padding: 40px;
-  box-shadow: 0px 10px 10px var(--noir1) ;
+  box-shadow: 0px 3px 3px var(--noir3) ;
   border-radius: 0 0 10px 10px;
 }
 .shadow-bottom{
   margin-top: 80px;
   padding: 40px;
-  box-shadow: 0px -10px 10px var(--noir1) ;
+  box-shadow: 0px -3px 3px var(--noir3) ;
   border-radius: 10px 10px 0 0;
 }
 @media (max-width: 600px) {

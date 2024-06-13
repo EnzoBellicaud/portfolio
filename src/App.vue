@@ -35,6 +35,7 @@ export default {
 :root {
   --noir1 : #1D1D1D;
   --noir2 : #292929;
+  --noir3 : #939393;
   --bleu1 : #2272FF;
   --bleu2 : #64a3ff;
   --blanc2 : #ececec;
