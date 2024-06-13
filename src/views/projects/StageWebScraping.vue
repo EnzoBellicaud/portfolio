@@ -1,62 +1,92 @@
 <template>
-  <div>
-    <h2>
-      Exploitation des techniques pour la collecte d’images
-      pour les tâches de classification et de détection d’objets
-    </h2>
-    <ListePuce :mots="['vision par ordinateur', 'collecte d’images',
-    'classification d’objets', 'détection d’objets','traitement d’images',
-    'sciences des données', 'apprentissage machine']"/>
-    <ListePuce :mots="['Python', 'Selenium','YoloWorld', 'Grounding Dino and SAM']"/>
-    <div>
-      <h3>Intro</h3>
-      <p>
-        Ce projet est une application de web scraping pour la collecte d’images pour les tâches de classification et de détection d’objets.
-      </p>
-    </div>
-    <div>
-      <div>
-        <h3>Réaliser un développement d’application</h3>
-        <ul>
-          Développer, c'est-à-dire concevoir, coder, tester et intégrer, une solution informatique pour un client signifie :
-          <li>respecter les besoins décrits par le client</li>
-          <li>appliquer les principes algorithmiques</li>
-          <li>veiller à la qualité du code et à sa documentation</li>
-          <li>choisir les ressources techniques appropriées</li>
-        </ul>
+  <div class="content">
+
+    <div class="titles">
+
+
+      <div class="shadow-top">
+        <h2>
+          Application de web scraping dédiée à la collecte puis à la classification d’images
+        </h2>
+        <h3 >Introduction</h3>
+        <div class="intro">
+          <p class="soustitre">Ce projet est une application de web scraping dédiée à la collecte d’images et classification d’objets pour <span class="important">construire ou agrandir des datasets.</span></p>
+          <p class="soustitre">Cette application permet de chercher <span class="important">n'importe qu'elle image sur internet</span>, on peut choisir les sources, les années ainsi que le nombre de résultats.</p>
+          <p class="soustitre">La partie IA permet de <span class="important">classer les images</span> dans diverses catégories définies par l'utilisateur.</p>
+          <p class="soustitre"> Je m'appuie sur des <span class="important">modèles de classification zero-shot</span> qui permettent la détection de n'importe quel type d'objet. Le choix du modèle est d'ailleur lui aussi libre. En effet, l'utilisateur peut faire un choix parmis cinq modèles pour trouver l'<span class="important">équilibre idéal entre consommation des ressources de l'ordinateur et qualité des détections</span></p>
+        </div>
       </div>
-      <div class="container row">
-        <p>Sur l'écran d'accueil on retrouve la majorité du cahier des charges. L'objectif principal étant d'avoir une possibilité de recherche ainsi que d'analyse hautement paramétrable</p>
-        <ImageWithBubbles
+    </div>
+
+    <div>
+      <div class="title-container">
+        <h3 class="title">Développement d'une application</h3>
+        <div class="scrolling-text-top">Respecter les besoins décrits par le client &nbsp; Appliquer les principes algorithmiques &nbsp; Veiller à la qualité du code et à sa documentation &nbsp; Choisir les ressources techniques appropriées</div>
+        <div class="scrolling-text-bottom">Respecter les besoins décrits par le client &nbsp; Appliquer les principes algorithmiques &nbsp; Veiller à la qualité du code et à sa documentation &nbsp; Choisir les ressources techniques appropriées</div>
+      </div>
+      <div class="container dark row">
+        <div class="description">
+          <p>La majorité du cahier des charges imposé se retrouve dans cet écran d'accueil.</p>
+          <p>L'objectif principal était d'offrir une <span class="important">possibilité de recherche et d'analyse hautement paramétrable</span>. En effet, l'application devait :</p>
+          <ul>
+            <li>Disposer de plusieurs sources de recherche afin de multiplier les nombre de résultats possible, le défi ici est d'élaborer un script de récupération des images propre à chaque site.</li>
+            <li>Pouvoir <span class="important">chercher n'importe quoi</span></li>
+            <li>Contrôler les années de résultats. C'est important pour évaluer la pertinence des données lors de l'analyse de celle-ci.</li>
+            <li><span class="important">Classer automatiquement les résultats</span> grâce à plusieurs modèles tout en pouvant contrôler et corriger les erreurs si besoin</li>
+          </ul>
+        </div>
+          <ImageWithBubbles
             class="image"
             :imageSrc="images[2].src"
             :bubbles="images[2].bubbles"
         />
       </div>
-      <div class="container row-reverse">
-        <p>Si l'utilisateur souhaite controler les résultats, il arrive alors sur cette, nouvelle vue (pour cet exemple, les résultats ont été obtenus avec les paramètres configuré dans le screenshot juste au dessus</p>
+      <div class="container dark row-reverse">
+        <div class="description">
+          <p>Si l'utilisateur souhaite contrôler les résultats, il arrive alors sur cette <span class="important">nouvelle vue.</span></p>
+          <p>Pour cet exemple, les résultats ont été obtenus avec les paramètres configurés dans le screenshot juste au-dessus.</p>
+          <p>Afin de garantir la modularité de l'application j'ai intégré <span class="important">des options et des filtres pour gérer l'affichage</span>. Ainsi il ne reste plus qu'à classer les images en choisissant une classe et en cliquant sur les images correspondantes !</p>
+        </div>
         <ImageWithBubbles
             class="image"
             :imageSrc="images[0].src"
             :bubbles="images[0].bubbles"
         />
       </div>
-      <div class="container row">
+      <div class="title-container">
+        <h3 class="title">Conduire un projet</h3>
+        <div class="scrolling-text-top">communiquer efficacement avec les différents acteurs d'un projet &nbsp; adopter une démarche proactive, créative et critique &nbsp;</div>
+        <div class="scrolling-text-bottom">communiquer efficacement avec les différents acteurs d'un projet &nbsp; adopter une démarche proactive, créative et critique &nbsp;</div>
+      </div>
+      <div class="container dark row">
         <div class="description">
-          <h3>Conduire un projet</h3>
-          <p>
-            Afin de conduire au mieux le projet, je maintenais un journal quotidien des tâches que je réalisais, ainsi que celle qui me restait.
-            Le suivi du projet ce faisait également au travers de commit régulier ainsi qu'une séparation entre branche dev et main afin de toujour garantir une version à jour du logiciel.
-          </p>
+          <p>Pour assurer le suivi du projet, je tenais <span class="important">un journal quotidien</span> des tâches réalisées et de celles restant à accomplir Cette liste comprenait un code couleur pour indiquer mon avancement. Il est ainsi simple de s'appercevoir que j'ai eu un problème avec l'implémentation du modèle anomaly clip.</p>
+          <p><span class="important">Je restais agile</span> car pendant l'avancement de l'application les perspectives de ce qui était possible pouvait évoluer. Pour cela je faisais <span class="important">une démonstration deux fois par semaine</span> minimum dont une souvent le vendredi pour regarder l'avancement de la semaine.</p>
+          <p>Le suivi était également effectué grâce à <span class="important">des commits réguliers</span> et une séparation entre les branches de développement (dev) et principale (main) pour <span class="important">garantir une version toujours stable du logiciel.</span></p>
         </div>
-        <img src="@/assets/stageWebScraping/journalSuivi1.png" alt="screenshot d'une TODO liste" class="illustration">
+        <img src="@/assets/stageWebScraping/journalSuivi1.png"
+             alt="screenshot d'une TODO liste"
+             class="image"
+        >
+      </div>
+    </div>
+    <div class="shadow-bottom">
+      <div>
+        <h3>Conclusion</h3>
+        <p class="soustitre">Cette application vise à se positionner comme un véritable <span class="important">outil de data engineering</span> en englobant la collecte et la classification d'images</p>
+        <p class="soustitre">Pour servir, cette outil doit comprendre toutes les fonctionnalités dont pouvait avoir besoin le chercheur qui l'utilise. Pour cela il a fallut <span class="important">communiquer régulièrement</span> sur les directions que je devais prendre</p>
+        <p class="soustitre">Cette application est encore vouée à évoluer, pour cela j'ai soigné la <span class="important">documentation du code </span> ainsi que fournit des détails sur son utilisation</p>
+        <p class="soustitre">Et pour être facilement utilisable elle devait aussi être claire, il a fallu donc énormément de <span class="important">réflexion sur les scénarios d'utilisation des diverses fonctionnalités</span></p>
+      </div>
+      <div class="keyword">
+        <span>Mots clés</span>
+        <ListePuce :mots="['Python', 'Selenium', 'YoloWorld', 'Grounding Dino and SAM','vision par ordinateur', 'collecte d’images', 'classification d’objets', 'détection d’objets', 'traitement d’images', 'sciences des données', 'apprentissage machine']"/>
       </div>
     </div>
   </div>
-
 </template>
-<script>
 
+<script>
 import ListePuce from "@/components/ListePuce.vue";
 import ImageWithBubbles from "@/components/ImageWithBubbles.vue";
 
@@ -70,13 +100,13 @@ export default {
     return {
       images: [
         {src: 'stageWebScraping/galleryPage1.png', bubbles : [
-            {top: '3%', left: '0.2%', description: 'Menu Option: Ce menu permet de choisir le répertoire de téléchargement des images, la taille des images et le nombre d\'images à afficher dans la gallerie. Il est aussi possible d\'utiliser des raccourcis pour avoir accès à ces paramètres.' },
-            {top: '8%', left: '50%', description: 'Filtres : trois filtres sont disponibles, un par année, un par mot de recherche et un par source' },
-            {top: '15%', left: '50%', description: 'Affichage des options : les options selectionnées par l\'utilisateur sont affichées ici' },
-            {top: '55%', left: '50%', description: "Gallerie d'image : Les images trouvées par le scraper sont affichées ici" },
-            {top: '91%', left: '50%', description: 'Option de sauvegarde: les images peuvent être sauvargées dans le répertoire de téléchargement, dans un csv, dans les deux ou dans aucun des deux (les images seront donc perdues)' },
-            {top: '95%', left: '40%', description: "Retour à l'écran précédent : permet de revenir à l'écran de départ afin de relancer une recherche" },
-            {top: '95%', left: '52%', description: 'Choix de l\'outil de classification: les images peuvent être classée à la main dans le cas où l\'utilisateur n\'est pas satisfait de la classification automatique ou qu\'il ne l\'a pas activée. Pour cela il suffit de choisir une classe et de cliquer sur les images que l\'on veut inscrire dans cette classe' },
+            {top: '3%', left: '0.2%', description: 'Menu Option: Ce menu permet de choisir le répertoire de téléchargement des images, la taille des images et le nombre d\'images à afficher dans la galerie. Il est aussi possible d\'utiliser des raccourcis pour accéder à ces paramètres.' },
+            {top: '8%', left: '50%', description: 'Filtres : Trois filtres sont disponibles, par année, par mot de recherche et par source.' },
+            {top: '15%', left: '50%', description: 'Affichage des options : Les options sélectionnées par l\'utilisateur sont affichées ici.' },
+            {top: '55%', left: '50%', description: 'Galerie d\'images : Les images trouvées par le scraper sont affichées ici.' },
+            {top: '91%', left: '50%', description: 'Options de sauvegarde : Les images peuvent être sauvegardées dans le répertoire de téléchargement, dans un CSV, ou dans les deux. Si aucune option n\'est choisie, les images seront perdues.' },
+            {top: '95%', left: '40%', description: 'Retour à l\'écran précédent : Permet de revenir à l\'écran de départ pour relancer une recherche.' },
+            {top: '95%', left: '52%', description: 'Choix de l\'outil de classification : Les images peuvent être classées manuellement si l\'utilisateur n\'est pas satisfait de la classification automatique ou ne l\'a pas activée. Il suffit de choisir une classe et de cliquer sur les images à classer.' },
           ]
         },
         {src: 'stageWebScraping/galleryPage2.png', bubbles : [
@@ -86,20 +116,19 @@ export default {
         },
         {src: 'stageWebScraping/startingPage1.png', bubbles : [
             {top: '10%', left: '24%', description: 'Choix des sources de recherche'},
-            {top: '23%', left: '24%', description: 'Ajout de mot de recherche' },
-            {top: '23%', left: '36%', description: 'Activation de classe identique aux mots de recherche' },
+            {top: '23%', left: '24%', description: 'Ajout de mots de recherche' },
+            {top: '23%', left: '36%', description: 'Activation de classes identiques aux mots de recherche' },
             {top: '38%', left: '24%', description: 'Liste des mots de recherche'},
             {top: '59%', left: '15%', description: 'Période de recherche'},
-            {top: '59%', left: '30%', description: 'Quantité de résultats de recherche pour chaque mots et chaque année'},
+            {top: '59%', left: '30%', description: 'Quantité de résultats de recherche pour chaque mot et chaque année'},
             {top: '69%', left: '23%', description: 'Activation de l\'ajout d\'images locales pour les classer'},
-            {top: '13%', left: '75%', description: 'Optimisation des performances: Le nombre de processus améliore la vitesse de l\'ia tandis que le nombre de thread améliore la vitesse du scrapper'},
-            {top: '24%', left: '75%', description: 'Ajout des classes, ce champs est désactivé lorsque le bouton "Sames classes" est actif'},
+            {top: '13%', left: '75%', description: 'Optimisation des performances : Le nombre de processus améliore la vitesse de l\'IA tandis que le nombre de threads améliore la vitesse du scraper.'},
+            {top: '24%', left: '75%', description: 'Ajout des classes, ce champ est désactivé lorsque le bouton "Sames classes" est actif.'},
             {top: '30%', left: '75%', description: 'Liste des classes'},
-            {top: '40%', left: '75%', description: 'Choix de l\'ia et de ses paramètres (sa précision)'},
-            {top: '77%', left: '30%', description: 'Bouton pour lancer les recherches. Celui-ci affiche "loading" après le lancement du programme'},
-            {top: '77%', left: '47%', description: 'Permet de choisir si l\'utilisateur veut controler les résultats'},
-            {top: '77%', left: '66%', description: 'Permet de choisir si l\'utilisateur veut que l\'ia classe les résultats'},
-
+            {top: '40%', left: '75%', description: 'Choix de l\'IA et de ses paramètres (sa précision)'},
+            {top: '77%', left: '30%', description: 'Bouton pour lancer les recherches. Celui-ci affiche "loading" après le lancement du programme.'},
+            {top: '77%', left: '47%', description: 'Permet de choisir si l\'utilisateur veut contrôler les résultats.'},
+            {top: '77%', left: '66%', description: 'Permet de choisir si l\'utilisateur veut que l\'IA classe les résultats.'},
           ]
         },
         {src: 'stageWebScraping/waitingPage1.png', bubbles : [
@@ -124,53 +153,160 @@ export default {
 </script>
 
 <style scoped>
+.titles {
+  text-align: center;
+  padding: 20px;
+}
+
+.soustitre {
+  text-align: center;
+}
+.content {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 20px;
+}
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 80dvi;
-  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.row{
+.row {
   flex-direction: row;
 }
 
 .row-reverse {
   flex-direction: row-reverse;
-}
-
-.description {
-  width: 40%;
-  margin : 10px
-}
-
-.illustration {
-  width: 50%;
+  text-align: left;
 }
 
 .image {
   width: 80%;
-  margin: 20px auto;
+  max-width: 800px;
+  margin: 20px;
   display: block;
+  border-radius: 50px;
+  box-shadow: 3px 3px 5px var(--noir1) ;
 }
 
+.description{
+  max-width: 800px;
+  margin: 10px;
+}
+
+.intro {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.important {
+  font-weight: bold;
+  transform: translate(-50%,-50%);
+  background-image: linear-gradient(var(--bleu1), var(--bleu1));
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  transition: background-size .7s, background-position .5s ease-in-out;
+}
+
+.important:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
+.title-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 80px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  color: var(--noir1);
+}
+
+.scrolling-text-top {
+  position: absolute;
+  top: 65%;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1em;
+  color: var(--noir2);
+  animation: scroll-left 20s linear infinite;
+}
+
+.scrolling-text-bottom {
+  position: absolute;
+  top: 0%;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1em;
+  color: var(--noir2);
+  animation: scroll-right 20s linear infinite;
+}
+.dark {
+  background-color: var(--noir1);
+  border-radius: 90px;
+  color : var(--blanc1);
+  box-shadow: 3px 3px 5px var(--noir1) ;
+}
+@keyframes scroll-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.keyword{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--blanc1);
+  border-radius: 90px;
+  background-color: var(--noir1);
+  justify-content: center;
+  padding: 20px;
+}
+.shadow-top {
+  padding: 40px;
+  box-shadow: 0px 10px 10px var(--noir1) ;
+}
+.shadow-bottom{
+  margin-top: 80px;
+  padding: 40px;
+  box-shadow: 0px -10px 10px var(--noir1) ;
+}
 @media (max-width: 600px) {
+
+  .image, .description{
+    width: 100%;
+    margin: 10px 0;
+  }
+
   .container {
     flex-direction: column;
-  }
-
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  h3 {
-    font-size: 1.2em;
-  }
-
-  .image {
-    width: 100%;
   }
 }
 </style>

@@ -1,11 +1,10 @@
 <template>
   <div>
-    <div class="projet">
-      <router-link to="/projects/stageWebScraping">
+    <div >
+      <router-link to="/projects/stageWebScraping" class="projet">
         <div class="card">
           <img src="@/assets/MainAfter.webp" alt="TODO"/>
-          <div class="card-text">
-            <p>Voici le texte qui apparaît en glissant par la droite</p>
+          <div class="card-text"><p class="description">Voici le texte qui apparaît en glissant par la droite</p>
           </div>
         </div>
         <div class="credits">
@@ -22,9 +21,9 @@
   margin: 200px;
   display: flex;
   align-items: center;
-  background-color: var(--yellowback2);
+  background-color: var(--blanc1);
   width: 50%; /* Ajustez selon vos besoins */
-  height: 50%; /* Ajustez selon vos besoins */
+  height: 350px; /* Ajustez selon vos besoins */
 }
 .card {
   position: relative;
@@ -46,26 +45,38 @@
   right: -100%; /* Commence en dehors de la carte */
   width: 100%;
   height: 100%;
-  background: var(--yellowback2);
-  color: var(--yellowtext2);
+  background: var(--noir1);
+  color: var(--blanc1);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   transition: right 0.5s ease;
   box-sizing: border-box;
   border-radius: 15px 0 0 15px;
 }
 
+.description {
+  width: 75%;
+  text-align: center;
+}
+
 .card:hover .card-text {
   right: -25%; /* Texte glisse en chevauchant l'image */
 }
+h2 {
+  padding-top: 0;
+}
 .credits {
   display: flex;
-  padding: 40px;
+  height: 100%;
   flex-direction: column;
-  background: var(--yellowback2);
-  color: var(--yellowtext2);
+  background: var(--noir1);
+  color: var(--blanc1);
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 15px 15px 0;
 }
+
 </style>
 
 <script>

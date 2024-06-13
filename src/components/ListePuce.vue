@@ -24,9 +24,9 @@ export default {
   .puce {
     margin: 10px;
     padding: 10px;
-    background-color: var(--yellowback2);
-    border: 1px solid var(--yellowborder1);
+    background-color: var(--noir2);
+    color: var(--blanc1);
     border-radius: 5px;
-    box-shadow: 3px 3px 5px var(--graysolid2) ;
+    box-shadow: 3px 3px 5px var(--noir2) ;
   }
 </style>

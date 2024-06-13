@@ -9,7 +9,7 @@
     </nav>
     <router-view/>
     <footer>
-      Contactez moi
+      Enzo Bellicaud
     </footer>
   </div>
 </template>
@@ -33,36 +33,15 @@ export default {
 
 <style>
 :root {
-  --yellowback1 : #FDFDF8;
-  --yellowback2 : #FFFDE6;
-  --yellowIC1 : #FFFAAA;
-  --yellowIC2 : #FFF380;
-  --yellowIC3 : #FBEA52;
-  --yellowborder1 : #EBDB4D;
-  --yellowborder2 : #DACD52;
-  --yellowborder3 : #C7B600;
-  --yellowsolid1 : #FFE900;
-  --yellowsolid2 : #F9E000;
-  --yellowtext1 : #8A7A00;
-  --yellowtext2 : #423E19;
-
-  --grayback1 : #FDFCFE;
-  --grayback2 : #FAF8FC;
-  --grayIC1 : #F2EFF5;
-  --grayIC2 : #EBE6EF;
-  --grayIC3 : #E5DEE9;
-  --grayborder1 : #DED7E4;
-  --grayborder2 : #D4CBDB;
-  --grayborder3 : #C2B6CC;
-  --graysolid1 : #94889E;
-  --graysolid2 : #897E92;
-  --graytext1 : #696070;
-  --graytext2 : #231D27;
+  --noir1 : #1D1D1D;
+  --noir2 : #292929;
+  --bleu1 : #2272FF;
+  --blanc1 : #ececec;
 }
 
 :root[data-theme="dark"] {
-  --yellowback1 : #12110B;
-  --yellowback2 : #19180F;
+  --background1 : #12110B;
+  --background2 : #19180F;
   --yellowIC1 : #282406;
   --yellowIC2 : #332D00;
   --yellowIC3 : #3E3700;
@@ -74,44 +53,30 @@ export default {
   --yellowtext1 : #F3E248;
   --yellowtext2 : #F4EEB4;
 
-  --grayback1 : #121014;
-  --grayback2 : #1B181D;
-  --grayIC1 : #252127;
-  --grayIC2 : #2D2831;
-  --grayIC3 : #352E39;
-  --grayborder1 : #3E3744;
-  --grayborder2 : #4D4454;
-  --grayborder3 : #685B71;
-  --graysolid1 : #766980;
-  --graysolid2 : #83768E;
-  --graytext1 : #BBAFC4;
-  --graytext2 : #EFEDF1;
 }
 
 html {
-  background-color: var(--yellowback1);
-  color: var(--yellowtext2);
+  background-color: var(--blanc1);
+  color: var(--noir1);
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-
 }
 
 nav {
   width: 100%;
   padding: 30px;
-  background-color: var(--yellowIC1);
+  background-color: var(--noir1);
   display: flex;
   justify-content: space-evenly;
-  box-shadow: var(--yellowIC3) 0px 0px 10px;
+  box-shadow: var(--noir1) 0px 0px 10px;
 }
 
 a {
-  color: var(--yellowtext1);
+  color: var(--blanc1);
 }
 
 nav a {
@@ -120,24 +85,24 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: var(--yellowtext2);
+  color: var(--bleu1);
 }
 
 nav a:hover {
-  color: var(--yellowtext2);
+  color: var(--bleu1);
 }
 
 footer {
   width: 100%;
-  background-color: var(--yellowIC1);
-  color: var(--yellowtext1);
+  background-color: var(--noir1);
+  color: var(--blanc1);
   padding: 20px;
   text-align: center;
 }
 
 .toggleMode {
-  background-color: var(--yellowIC3);
-  color: var(--yellowtext2);
+  background-color: var(--bleu1);
+  color: var(--blanc1);
   border: none;
   border-radius: 90px;
   cursor: pointer;
@@ -151,7 +116,7 @@ footer {
 }
 
 .slider {
-  background-color: var(--yellowtext2);
+  background-color: var(--blanc1);
   border-radius: 90px;
   height: 20px;
   width: 20px;
@@ -161,18 +126,19 @@ h2 {
   font-size: 2em;
   padding: 50px 20px 20px 20px;
   margin-bottom: 10px;
-  color: var(--yellowtext2);
   text-align: center;
 }
 
 h3 {
   font-size: 1.5em;
   margin-top: 20px;
+  text-align: center;
 }
 
 p {
   font-size: 1.1em;
   margin: 10px 0;
+  text-align: justify;
 }
 
 ul {

@@ -76,6 +76,7 @@ export default {
 .main-image {
   width: 100%;
   display: block;
+  border-radius: 50px;
 }
 
 .bubble {
@@ -89,7 +90,8 @@ export default {
 
 .description {
   margin-top: 20px;
-  background-color: var(--yellowback2);
+  background-color: var(--noir1);
+  color: var(--blanc1);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
