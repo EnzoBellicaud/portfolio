@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkportfolio"]=self["webpackChunkportfolio"]||[]).push([[782],{6782:function(t,n,e){e.r(n),e.d(n,{default:function(){return a}});var l=function(){var t=this,n=t._self._c;return n("div",{staticClass:"home"})},u=[],o={name:"ContactView"},r=o,s=e(1656),i=(0,s.A)(r,l,u,!1,null,null,null),a=i.exports}}]);
-//# sourceMappingURL=782.fd495487.js.map
