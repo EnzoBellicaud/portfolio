@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Développeur Français</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dark .glass-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7e22ce 100%);
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .dark .tech-badge {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .dark .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 bg-pattern">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="glass-card px-6 py-2">
+                    <a href="#" class="text-xl font-bold">Développeur<span class="text-blue-500">FR</span></a>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                    <a href="#projets" class="nav-link">Projets</a>
+                    <a href="#competences" class="nav-link">Compétences</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="glass-card p-2 rounded-full">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+
+                    <button class="md:hidden glass-card p-2 rounded-full" id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 glass-card p-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                    <a href="#projets" class="nav-link">Projets</a>
+                    <a href="#competences" class="nav-link">Compétences</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Bonjour, je suis <span class="text-blue-500">Jean</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Développeur Full Stack Français</h2>
+                    <p class="text-lg mb-8 max-w-lg">Je crée des applications web modernes avec des technologies comme React, Node.js et Python. Passionné par le code propre et les designs élégants.</p>
+
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="glass-card px-6 py-3 rounded-full font-medium gradient-bg text-white hover:opacity-90 transition">Me contacter</a>
+                        <a href="#projets" class="glass-card px-6 py-3 rounded-full font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">Voir mes projets</a>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="glass-card w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden floating">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="absolute -bottom-5 -left-5 glass-card p-4 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                <span class="text-sm">Disponible</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute -top-5 -right-5 glass-card p-3 rounded-full">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="py-20 bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes <span class="text-blue-500">Projets</span></h2>
+                <p class="max-w-2xl mx-auto">Découvrez une sélection de mes réalisations récentes, alliant design moderne et fonctionnalités avancées.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+                    <div class="mb-4 overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Project 1" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Plateforme E-commerce</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Une solution complète de boutique en ligne avec paiement sécurisé et gestion des stocks.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">React</span>
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">Node.js</span>
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">MongoDB</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-blue-500 hover:underline flex items-center">
+                            Voir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+                    <div class="mb-4 overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Project 2" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Application de Gestion</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Outil de gestion de projet avec tableau Kanban, calendrier et suivi du temps.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">Vue.js</span>
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">Firebase</span>
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">TailwindCSS</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-blue-500 hover:underline flex items-center">
+                            Voir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card p-6 rounded-2xl hover:scale-[1.02] transition-transform duration-300">
+                    <div class="mb-4 overflow-hidden rounded-xl">
+                        <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Project 3" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Réseau Social</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Plateforme de partage entre professionnels avec messagerie et système de recommandation.</p>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">Next.js</span>
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">GraphQL</span>
+                        <span class="tech-badge px-3 py-1 text-sm rounded-full">PostgreSQL</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-blue-500 hover:underline flex items-center">
+                            Voir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-500">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="glass-card px-6 py-3 rounded-full font-medium inline-flex items-center">
+                    Voir tous mes projets <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mes <span class="text-blue-500">Compétences</span></h2>
+                <p class="max-w-2xl mx-auto">Un aperçu des technologies que je maîtrise et que j'utilise pour créer des solutions performantes.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Skill 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl">
+                        <i class="fab fa-react text-blue-500"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">React</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl">
+                        <i class="fab fa-node-js text-green-500"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Node.js</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl">
+                        <i class="fab fa-python text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Python</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl">
+                        <i class="fas fa-database text-purple-500"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">SQL</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-purple-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl">
+                        <i class="fab fa-js text-yellow-300"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">JavaScript</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-yellow-300 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Développement d'interfaces utilisateur réactives</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Optimisation des performances</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Accessibilité et compatibilité</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Backend</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Architecture API REST et GraphQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Sécurité et authentification</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Optimisation des bases de données</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-gray-100 dark:from-gray-800 to-transparent">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Me <span class="text-blue-500">Contacter</span></h2>
+                <p class="max-w-2xl mx-auto">Disponible pour des opportunités de collaboration ou des projets freelance. N'hésitez pas à me contacter !</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="glass-card p-8 rounded-2xl">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-medium">Votre nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-medium">Votre email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Votre message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full gradient-bg text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition">Envoyer le message</button>
+                    </form>
+                </div>
+
+                <div>
+                    <div class="glass-card p-8 rounded-2xl mb-8">
+                        <h3 class="text-xl font-bold mb-6">Coordonnées</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <a href="mailto:contact@developpeur.fr" class="text-blue-500 hover:underline">contact@developpeur.fr</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Téléphone</h4>
+                                    <a href="tel:+33612345678" class="text-blue-500 hover:underline">+33 6 12 34 56 78</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Localisation</h4>
+                                    <p>Paris, France</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-6">Réseaux sociaux</h3>
+
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white hover:opacity-90 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white hover:opacity-90 transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white hover:opacity-90 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white hover:opacity-90 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center">
+        <div class="container mx-auto px-6">
+            <div class="glass-card px-6 py-4 inline-block rounded-full mb-6">
+                <a href="#" class="text-xl font-bold">Développeur<span class="text-blue-500">FR</span></a>
+            </div>
+
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#accueil" class="nav-link">Accueil</a>
+                <a href="#projets" class="nav-link">Projets</a>
+                <a href="#competences" class="nav-link">Compétences</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <p class="text-gray-500 dark:text-gray-400">© 2023 Développeur Français. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-white');
+                nav.classList.add('dark:bg-gray-800');
+                nav.classList.add('bg-opacity-80');
+                nav.classList.add('dark:bg-opacity-80');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-white');
+                nav.classList.remove('dark:bg-gray-800');
+                nav.classList.remove('bg-opacity-80');
+                nav.classList.remove('dark:bg-opacity-80');
+            }
+        });
+    </script>
+</body>
+</html>

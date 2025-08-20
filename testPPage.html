@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet GenAI | Développeur Français</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dark .glass-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7e22ce 100%);
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .dark .tech-badge {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .dark .bg-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+
+        .project-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1677442135136-760c8e9a1393?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dark .project-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1677442135136-760c8e9a1393?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-video {
+            aspect-ratio: 16/9;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 bg-pattern">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="glass-card px-6 py-2">
+                    <a href="#" class="text-xl font-bold">Développeur<span class="text-blue-500">FR</span></a>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link">Accueil</a>
+                    <a href="#" class="nav-link">Projets</a>
+                    <a href="#" class="nav-link">Compétences</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="glass-card p-2 rounded-full">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero min-h-[50vh] flex items-center justify-center pt-20 text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <div class="glass-card inline-block px-6 py-2 mb-6">
+                <span class="font-medium">IA Générative</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">GenAI Creative Studio</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">Une plateforme révolutionnaire de création assistée par IA pour les artistes et designers</p>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold mb-6">Aperçu du Projet</h2>
+
+                    <div class="space-y-6 mb-12">
+                        <p>GenAI Creative Studio est une application web qui permet aux créatifs de générer des œuvres d'art uniques en combinant différents modèles d'IA générative avec des outils de post-traitement intuitifs.</p>
+
+                        <p>En tant que lead développeur sur ce projet, j'ai conçu l'architecture du système et implémenté les pipelines d'inférence pour les modèles Stable Diffusion, GPT-3 et DALL-E, tout en créant une interface utilisateur réactive et intuitive.</p>
+
+                        <p>Le projet a été sélectionné parmi les 10 meilleures innovations technologiques au festival Futur en Seine 2023.</p>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-6">Démo Vidéo</h3>
+                        <div class="glass-card rounded-2xl overflow-hidden demo-video">
+                            <div class="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-800">
+                                <i class="fas fa-play text-4xl text-blue-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Fonctionnalités Clés</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="glass-card p-6 rounded-2xl feature-card transition-transform">
+                                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white mb-4">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Génération d'Images</h4>
+                                <p>Créez des visuels uniques à partir de descriptions textuelles avec plusieurs modèles d'IA disponibles.</p>
+                            </div>
+
+                            <div class="glass-card p-6 rounded-2xl feature-card transition-transform">
+                                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white mb-4">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Édition Intelligente</h4>
+                                <p>Modifiez vos créations avec des outils assistés par IA pour un contrôle artistique précis.</p>
+                            </div>
+
+                            <div class="glass-card p-6 rounded-2xl feature-card transition-transform">
+                                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white mb-4">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Style Transfer</h4>
+                                <p>Appliquez le style d'une image à une autre avec notre algorithme propriétaire.</p>
+                            </div>
+
+                            <div class="glass-card p-6 rounded-2xl feature-card transition-transform">
+                                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white mb-4">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2">Collaboration</h4>
+                                <p>Travaillez en équipe sur des projets créatifs avec des outils de partage en temps réel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/3">
+                    <div class="glass-card p-6 rounded-2xl sticky top-24">
+                        <h3 class="text-xl font-bold mb-4">Détails du Projet</h3>
+
+                        <div class="space-y-4 mb-6">
+                            <div>
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Client</h4>
+                                <p>Startup Creative Labs</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Rôle</h4>
+                                <p>Lead Développeur Full Stack</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Durée</h4>
+                                <p>6 mois (2023)</p>
+                            </div>
+
+                            <div>
+                                <h4 class="font-medium text-gray-500 dark:text-gray-400">Équipe</h4>
+                                <p>4 développeurs, 2 designers</p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-bold mb-2">Technologies Utilisées</h4>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">Python</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">TensorFlow</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">React</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">Node.js</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">Docker</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">AWS</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">Stable Diffusion</span>
+                            <span class="tech-badge px-3 py-1 text-sm rounded-full">GPT-3</span>
+                        </div>
+
+                        <div class="flex flex-col space-y-3">
+                            <a href="#" class="gradient-bg text-white py-2 px-4 rounded-lg text-center font-medium hover:opacity-90 transition">
+                                <i class="fab fa-github mr-2"></i> Voir le code
+                            </a>
+                            <a href="#" class="glass-card py-2 px-4 rounded-lg text-center font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                                <i class="fas fa-external-link-alt mr-2"></i> Visiter le site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-20 bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Détails <span class="text-blue-500">Techniques</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Architecture du Système</h3>
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*_q1lKd4VpK1QhWY6Q8Qk1Q.png" alt="System Architecture" class="w-full h-auto rounded-lg mb-4">
+                    <p>L'architecture microservices permet une scalabilité horizontale des modèles d'IA. Chaque service est containerisé avec Docker et orchestré via Kubernetes sur AWS EKS.</p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Challenges Techniques</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold mb-1">Latence des Modèles</h4>
+                            <p>Implémentation d'un système de cache intelligent pour les prompts similaires et optimisation des modèles avec TensorRT.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold mb-1">Coût du Cloud</h4>
+                            <p>Mise en place d'un système de scaling automatique basé sur la demande et utilisation d'instances spot pour les batchs de nuit.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold mb-1">Qualité Artistique</h4>
+                            <p>Développement d'un pipeline de post-traitement pour améliorer les résultats bruts des modèles d'IA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl">
+                <h3 class="text-xl font-bold mb-6">Processus de Développement</h3>
+                <div class="flex flex-col space-y-8">
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">Recherche et Prototypage</h4>
+                            <p>Évaluation de différents modèles d'IA générative et création de POC pour valider les cas d'usage.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">Design d'Interface</h4>
+                            <p>Collaboration étroite avec les designers pour créer une expérience utilisateur intuitive malgré la complexité sous-jacente.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">Développement Backend</h4>
+                            <p>Implémentation des API et des services d'inférence avec des mécanismes de file d'attente et de priorisation.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white font-bold">4</div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">Optimisation</h4>
+                            <p>Tests de performance et amélioration continue de la latence et de la qualité des résultats.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Résultats <span class="text-blue-500">Concrets</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">15K+</div>
+                    <p>Utilisateurs actifs mensuels</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">4.8/5</div>
+                    <p>Note moyenne sur les stores</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-4xl font-bold gradient-text mb-2">200%</div>
+                    <p>ROI après 6 mois</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl">
+                <h3 class="text-xl font-bold mb-4">Témoignage Client</h3>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div>
+                        <blockquote class="italic text-lg mb-4">
+                            "L'équipe a su transformer notre vision en une plateforme exceptionnelle. Leur expertise en IA et leur approche centrée sur l'utilisateur ont fait toute la différence dans notre succès."
+                        </blockquote>
+                        <div>
+                            <p class="font-bold">Sophie Martin</p>
+                            <p class="text-gray-500 dark:text-gray-400">CEO, Startup Creative Labs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-20 bg-gradient-to-b from-gray-100 dark:from-gray-800 to-transparent">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Galerie <span class="text-blue-500">Visuelle</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1682686580391-615bbef01c29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery 1" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="glass-card overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery 2" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="glass-card overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1682686580391-615bbef01c29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery 3" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="glass-card overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery 4" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="glass-card overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1682686580391-615bbef01c29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery 5" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="glass-card overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1682695796954-bad0d0f59ff1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gallery 6" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Project -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl text-gray-500 dark:text-gray-400 mb-2">Projet Suivant</h3>
+                        <h2 class="text-3xl font-bold">Plateforme E-commerce IA</h2>
+                    </div>
+                    <a href="#" class="gradient-bg text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition inline-flex items-center">
+                        Voir le projet <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gradient-to-t from-gray-100 dark:from-gray-800 to-transparent">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="glass-card px-6 py-2 inline-block rounded-full mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold">Développeur<span class="text-blue-500">FR</span></a>
+                </div>
+
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-xl hover:text-blue-500 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-xl hover:text-blue-500 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-xl hover:text-blue-500 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-xl hover:text-blue-500 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="#contact" class="glass-card px-6 py-2 rounded-full font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        Me contacter
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-500 dark:text-gray-400">© 2023 Développeur Français. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-white');
+                nav.classList.add('dark:bg-gray-800');
+                nav.classList.add('bg-opacity-80');
+                nav.classList.add('dark:bg-opacity-80');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-white');
+                nav.classList.remove('dark:bg-gray-800');
+                nav.classList.remove('bg-opacity-80');
+                nav.classList.remove('dark:bg-opacity-80');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,165 +1,242 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/projects">Projects</router-link> |
-      <router-link to="/about">About me</router-link> |
-      <router-link to="/contact">Contact</router-link> |
-      <div id="darkMode" @click="toggleDarkMode" class="toggleMode"><span class="slider"></span></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="hidden md:flex space-x-8">
+                    <router-link to="/" class="nav-link">Accueil</router-link> 
+                    <router-link to="/about" class="nav-link">Portfolio</router-link> 
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <ThemeToggle />
+
+                    <button class="md:hidden glass-card p-2 rounded-full hover:scale-105 transition-transform" id="mobile-menu-button">
+                        <i class="fas fa-bars" :class="{ 'text-black': !isDark, 'text-white': isDark }"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 glass-card p-4">
+                <div class="flex flex-col space-y-3">
+                    <router-link to="/" class="nav-link">Accueil</router-link> 
+                    <router-link to="/about" class="nav-link">Portfolio</router-link> 
+                </div>
+            </div>
+        </div>
     </nav>
     <router-view/>
-    <footer>
-      Enzo Bellicaud
+    
+    <!-- Footer -->
+    <footer class="py-8 text-center bg-gradient-to-t from-gray-50 dark:from-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-6 mb-6">
+                <router-link to="/" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Home</router-link> 
+                <router-link to="/projects" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Projects</router-link> 
+                <router-link to="/about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">About me</router-link> 
+                <router-link to="/contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Contact</router-link> 
+            </div>
+
+            <p class="text-gray-500 dark:text-gray-400">Développé par Enzo Bellicaud</p>
+        </div>
     </footer>
   </div>
 </template>
 <script>
-import store from "./store";
+import ThemeToggle from '@/components/ThemeToggle.vue';
+
 export default {
   name: 'App',
-  methods: {
-    toggleDarkMode() {
-      var currentTheme = document.documentElement.getAttribute("data-theme");
-      var newTheme = currentTheme === "dark" ? "light" : "dark";
-      console.log(newTheme);
-      store.commit('toggleTheme')
-      console.log(store.theme)
-      document.getElementById("darkMode").classList.toggle("toggleModeOn");
-      document.documentElement.setAttribute("data-theme", newTheme);
+  components: {
+    ThemeToggle
+  },
+  computed: {
+    isDark() {
+      return this.$store.getters.isDark;
     }
   },
+  mounted() {
+    // Initialiser le thème au chargement
+    this.$store.dispatch('initTheme');
+    this.applyTheme();
+    
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Add shadow to navbar on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 10) {
+        nav.classList.add('shadow-lg', 'backdrop-blur-md', 'bg-white/80', 'dark:bg-gray-900/80');
+      } else {
+        nav.classList.remove('shadow-lg', 'backdrop-blur-md', 'bg-white/80', 'dark:bg-gray-900/80');
+      }
+    });
+  },
+  methods: {
+    applyTheme() {
+      const html = document.documentElement;
+      if (this.$store.getters.isDark) {
+        html.classList.add('dark');
+        html.setAttribute('data-theme', 'dark');
+      } else {
+        html.classList.remove('dark');
+        html.setAttribute('data-theme', 'light');
+      }
+    }
+  },
+  watch: {
+    '$store.state.theme'() {
+      this.applyTheme();
+    }
+  }
 }
 </script>
 
 <style>
-:root {
-  --noir1 : #1D1D1D;
-  --noir2 : #292929;
-  --noir3 : #939393;
-  --bleu1 : #2272FF;
-  --bleu2 : #64a3ff;
-  --blanc2 : #ececec;
-  --blanc1 : #f6f5f5;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    background-attachment: fixed;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-:root[data-theme="dark"] {
-  --background1 : #12110B;
-  --background2 : #19180F;
-  --yellowIC1 : #282406;
-  --yellowIC2 : #332D00;
-  --yellowIC3 : #3E3700;
-  --yellowborder1 : #4B4506;
-  --yellowborder2 : #5E571A;
-  --yellowborder3 : #786F24;
-  --yellowsolid1 : #FFEE57;
-  --yellowsolid2 : #F5E44B;
-  --yellowtext1 : #F3E248;
-  --yellowtext2 : #F4EEB4;
-
+body.dark, .dark body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
-html {
-  background-color: var(--blanc1);
-  color: var(--noir1);
-  max-width: 100% !important;
-  overflow-x: hidden !important;
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: all 0.3s ease;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
 }
 
-nav {
-  width: 100%;
-  padding: 30px;
-  background-color: var(--noir1);
-  display: flex;
-  justify-content: space-evenly;
-  box-shadow: var(--noir1) 0px 0px 10px;
+.dark .glass-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-a {
-  color: var(--blanc1);
+.dark .glass-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
 }
 
-nav a {
-  font-weight: bold;
-  text-decoration: none;
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-nav a.router-link-exact-active {
-  color: var(--bleu1);
+.dark .gradient-bg {
+    background: linear-gradient(135deg, #1e3a8a 0%, #7e22ce 100%);
 }
 
-nav a:hover {
-  color: var(--bleu1);
+.tech-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-footer {
-  width: 100%;
-  background-color: var(--noir1);
-  color: var(--blanc1);
-  padding: 20px;
-  text-align: center;
+.dark .tech-badge {
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.toggleMode {
-  background-color: var(--bleu1);
-  color: var(--blanc1);
-  border: none;
-  border-radius: 90px;
-  cursor: pointer;
-  height: 20px;
-  width: 40px;
-  display: flex;
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.toggleModeOn {
-  justify-content: flex-end;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
 }
 
-.slider {
-  background-color: var(--blanc1);
-  border-radius: 90px;
-  height: 20px;
-  width: 20px;
+.nav-link:hover::after,
+.nav-link.router-link-active::after {
+    width: 100%;
 }
 
-h2 {
-  font-size: 3.2em;
-  padding: 50px 20px 20px 20px;
-  margin-bottom: 10px;
-  text-align: center;
+.floating {
+    animation: floating 3s ease-in-out infinite;
 }
 
-h3 {
-  font-size: 3em;
-  text-align: center;
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
-h4 {
-  text-align: center;
-  font-size: 1.5em;
-  margin: 10px;
+.bg-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
-p {
-  font-size: 1.7em;
-  margin: 10px 0;
-  text-align: justify;
+.dark .bg-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
-ul {
-  margin: 10px 0 20px 20px;
-  padding-left: 20px;
-  list-style-type: disc;
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-li {
-  font-size: 1.1em;
-  margin: 5px 0;
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Form styles */
+input, textarea {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(102, 126, 234, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.dark input, .dark textarea {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: white;
+}
+
+.dark input:focus, .dark textarea:focus {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(102, 126, 234, 0.5) !important;
 }
 </style>

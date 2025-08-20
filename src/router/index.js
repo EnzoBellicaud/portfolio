@@ -23,8 +23,13 @@ const routes = [
           {
             path: 'stageWebScraping',
             name: 'stageWebScraping',
-            component: () => import('../views/projects/StageWebScraping.vue')
+            component: () => import('../views/projects/IUT/StageWebScraping.vue')
           },
+          {
+            path: 'memoryGame',
+            name: 'memoryGame',
+            component: () => import('../views/projects/Jeux/MemoryGame.vue')
+          }
     ],
   },
   {
