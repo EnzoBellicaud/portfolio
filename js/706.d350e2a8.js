@@ -1,2 +1,2 @@
 "use strict";(self["webpackChunkportfolio"]=self["webpackChunkportfolio"]||[]).push([[706],{4325:function(e,n,r){r.r(n),r.d(n,{default:function(){return s}});var t=function(){var e=this,n=e._self._c;return n("div",[n("router-view")],1)},u=[],l={name:"ProjectsView"},o=l,i=r(1656),f=(0,i.A)(o,t,u,!1,null,null,null),s=f.exports}}]);
-//# sourceMappingURL=706.4dca15ca.js.map
+//# sourceMappingURL=706.d350e2a8.js.map
