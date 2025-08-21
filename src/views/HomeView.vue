@@ -16,12 +16,12 @@
                     <p class="text-lg mb-8 max-w-lg text-gray-600 dark:text-gray-300">
                     Les compétences du BUT traité dans ce portfolio sont :
                     <ul class="list-disc pl-6">
-                        <li>Gérer des données de l'information;</li>
-                        <li>Conduire un projet.</li>
+                        <li>Gérer des données de l'information (sections rouge, verte, jaune, orange et bleu foncé);</li>
+                        <li>Conduire un projet (sections violette, verte, rouge, bleu clair et bleu foncé).</li>
                     </ul>
                     Et celle de la SAÉ est :
                     <ul class="list-disc pl-6">
-                        <li>Collaborer au sein d’une équipe informatique.</li>
+                        <li>Collaborer au sein d’une équipe informatique (sections contexte d'IAppel et SPVConnect, violette et rouge).</li>
                     </ul>
                 </p>
                     <div class="flex space-x-4">
